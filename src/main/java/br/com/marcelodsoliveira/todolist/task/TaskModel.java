@@ -13,7 +13,7 @@ import jakarta.persistence.Id;
 import lombok.Data;
 
 @Data
-@Entity
+@Entity(name = "tb_tasks")
 public class TaskModel {
   
   @Id
@@ -27,8 +27,10 @@ public class TaskModel {
   private LocalDateTime endAt;
   private String priority;
 
+  private UUID idUser;
+  
   @CreationTimestamp
   private LocalDateTime createdAt;
 
-  private UUID idUser;
+  
 }
