@@ -8,6 +8,7 @@ COPY . .
 RUN apt-get insatll maven -y
 RUN mvn clean insatll
 
+FROM openjdk:17-jdk-slim
 EXPOSE 8080
 
 COPY --from=build /target/todolist-1.0.0.jar app.jar
